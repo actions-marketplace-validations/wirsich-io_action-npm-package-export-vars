@@ -32,9 +32,11 @@
 	"license": "BSD-2-Clause",
 	"dependencies": {
 		"@actions/core": "^1.9.0",
-		"@actions/glob": "^0.3.0"
+		"@actions/glob": "^0.3.0",
+		"flat": "^5.0.2"
 	},
 	"devDependencies": {
+		"@types/flat": "^5.0.2",
 		"@types/node": "^18.0.3",
 		"@typescript-eslint/eslint-plugin": "^5.30.6",
 		"@typescript-eslint/parser": "^5.30.6",

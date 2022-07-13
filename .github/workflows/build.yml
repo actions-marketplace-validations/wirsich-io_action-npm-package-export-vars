@@ -16,16 +16,3 @@ jobs:
         run: |
           npm install
           npm run all
-      - name: Get version
-        uses: ./
-      - name: Commit files
-        run: |
-          git config --local user.email "stephan@wirsich.net"
-          git config --local user.name "GitHub Action [wirsich]"
-          git add dist/ || return 0
-          git commit -m "chore(build): ${{ env.PACKAGE_VERSION }}" || exit 0
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
