@@ -8,7 +8,8 @@
 		"lint": "eslint src/**/*.ts",
 		"format": "eslint --fix src/**/*.ts",
 		"pack": "ncc build",
-		"all": "npm run lint && npm run format && npm run pack"
+		"all": "npm run lint && npm run format && npm run pack",
+		"start:dev": "npx nodemon --watch \"src/**/*.ts\" --ignore \"node_modules/**/*\" --exec NODE_ENV=DEVELOPMENT npx ts-node src/main.ts"
 	},
 	"repository": {
 		"type": "git",
