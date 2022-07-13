@@ -1,4 +1,5 @@
-name: "test"
+
+name: "Test"
 on:
   pull_request:
   push:
@@ -10,9 +11,19 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 14, 16, 18 ]
+    name: Test Node ${{ matrix.node }} support
     steps:
       - uses: actions/checkout@v1
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
       - run: |
+          #npm ci
+          #npm test
           npm install
           npm run all
   test-auto-resolving:
@@ -23,11 +34,13 @@ jobs:
           pwd
           ls
       - uses: ./
-      - run: echo 'PACKAGE_AUTHOR ${{ env.PACKAGE_AUTHOR }}'
-      - run: echo 'PACKAGE_DESCRIPTION ${{ env.PACKAGE_DESCRIPTION }}'
-      - run: echo 'PACKAGE_LICENSE ${{ env.PACKAGE_LICENSE }}'
-      - run: echo 'PACKAGE_NAME ${{ env.PACKAGE_NAME }}'
-      - run: echo 'PACKAGE_VERSION ${{ env.PACKAGE_VERSION }}'
+      - run: echo 'PKG_NAME ${{ env.PKG_NAME }}'
+      - run: echo 'PKG_AUTHOR ${{ env.PKG_AUTHOR }}'
+      - run: echo 'PKG_DESCRIPTION ${{ env.PKG_DESCRIPTION }}'
+      - run: echo 'PKG_LICENSE ${{ env.PKG_LICENSE }}'
+      - run: echo 'PKG_VERSION ${{ env.PKG_VERSION }}'
+      - run: echo 'PKG_PRIVATE ${{ env.PKG_PRIVATE }}'
+      - run: echo 'PKG_KEYWORDS_0 ${{ env.PKG_KEYWORDS_0 }}'
   test-manual-path:
     runs-on: ubuntu-latest
     steps:
@@ -38,8 +51,10 @@ jobs:
       - uses: ./
         with:
           path: 'package.json'
-      - run: echo 'PACKAGE_AUTHOR ${{ env.PACKAGE_AUTHOR }}'
-      - run: echo 'PACKAGE_DESCRIPTION ${{ env.PACKAGE_DESCRIPTION }}'
-      - run: echo 'PACKAGE_LICENSE ${{ env.PACKAGE_LICENSE }}'
-      - run: echo 'PACKAGE_NAME ${{ env.PACKAGE_NAME }}'
-      - run: echo 'PACKAGE_VERSION ${{ env.PACKAGE_VERSION }}'
+      - run: echo 'PKG_NAME ${{ env.PKG_NAME }}'
+      - run: echo 'PKG_AUTHOR ${{ env.PKG_AUTHOR }}'
+      - run: echo 'PKG_DESCRIPTION ${{ env.PKG_DESCRIPTION }}'
+      - run: echo 'PKG_LICENSE ${{ env.PKG_LICENSE }}'
+      - run: echo 'PKG_VERSION ${{ env.PKG_VERSION }}'
+      - run: echo 'PKG_PRIVATE ${{ env.PKG_PRIVATE }}'
+      - run: echo 'PKG_KEYWORDS_0 ${{ env.PKG_KEYWORDS_0 }}'

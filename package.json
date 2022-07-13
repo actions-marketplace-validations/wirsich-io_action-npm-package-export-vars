@@ -4,6 +4,9 @@
 	"private": false,
 	"description": "A GitHub Action to extract variables from package.json to an environment variables, so that it can be used in any workflow",
 	"main": "dist/index.js",
+	"engines": {
+		"node": "16"
+	},
 	"scripts": {
 		"lint": "eslint src/**/*.ts",
 		"format": "eslint --fix src/**/*.ts",
