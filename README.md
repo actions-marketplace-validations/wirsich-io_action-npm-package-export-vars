@@ -1,24 +1,16 @@
-# 📦 package-info
+# 📦 action-npm-package-export-vars
 A GitHub Action extracting various fields from package.json and exporting them as environment variables
 
 ## 📖 Docs (kind of)
 ### Extracted fields
-- author as `PACKAGE_AUTHOR`
-- description as `PACKAGE_DESCRIPTION`
-- license as `PACKAGE_LICENSE`
-- name as `PACKAGE_NAME`
-- version as `PACKAGE_VERSION`
-
+- you can configure any fields of the package.json which will be exported
 ### Usage
 
 ```yaml
-- uses: nyaayaya/package-info@v1
+- uses: wirsich/action-npm-package-export-vars@v1
   with:
-    path: 'uwu/package.json' # Optional
+    path: './package.json' # Optional
     follow-symlinks: 'false' # Optional
 ```
 
 And then you can use them, eg. `${{ env.PACKAGE_AUTHOR }}` 🎉
-
-Thank you for reading this 🙇🏼‍♀️
-

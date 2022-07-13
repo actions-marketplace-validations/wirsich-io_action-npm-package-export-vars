@@ -15,7 +15,7 @@ async function run(): Promise<void> {
 		exportVariable('PACKAGE_LICENSE', packageFile.license);
 		exportVariable('PACKAGE_NAME', packageFile.name);
 		exportVariable('PACKAGE_VERSION', packageFile.version);
-	} catch (error) {
+	} catch (error: any) {
 		setFailed(error.message);
 	}
 }

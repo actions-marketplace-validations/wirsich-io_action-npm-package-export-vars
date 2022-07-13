@@ -1,9 +1,9 @@
 {
-	"name": "package-version",
+	"name": "action-npm-package-export-vars",
 	"version": "1.0.0",
-	"private": true,
-	"description": "A GitHub Action to extract version from package.json to an environment variable",
-	"main": "src/main.ts",
+	"private": false,
+	"description": "A GitHub Action to extract variables from package.json to an environment variables, so that it can be used in any workflow",
+	"main": "dist/index.js",
 	"scripts": {
 		"lint": "eslint src/**/*.ts",
 		"format": "eslint --fix src/**/*.ts",
@@ -12,7 +12,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/nyaayaya/package-info.git"
+		"url": "git+https://github.com/wirsich/action-npm-package-export-vars.git"
 	},
 	"keywords": [
 		"actions",
@@ -27,25 +27,25 @@
 		"package",
 		"version"
 	],
-	"author": "nyaayaya<contrib@nyaa.science>",
+	"author": "wirsich <stephan.wirsich@googlemail.com>",
 	"license": "BSD-2-Clause",
 	"dependencies": {
-		"@actions/core": "^1.2.6",
-		"@actions/glob": "^0.1.0"
+		"@actions/core": "^1.9.0",
+		"@actions/glob": "^0.3.0"
 	},
 	"devDependencies": {
-		"@types/node": "^14.0.5",
-		"@typescript-eslint/eslint-plugin": "^3.0.2",
-		"@typescript-eslint/parser": "^3.0.2",
-		"@vercel/ncc": "^0.24.1",
-		"eslint": "^7.1.0",
-		"eslint-config-standard": "^14.1.1",
-		"eslint-plugin-github": "^4.0.1",
-		"eslint-plugin-import": "^2.20.2",
+		"@types/node": "^18.0.3",
+		"@typescript-eslint/eslint-plugin": "^5.30.6",
+		"@typescript-eslint/parser": "^5.30.6",
+		"@vercel/ncc": "^0.34.0",
+		"eslint": "^8.19.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-github": "^4.3.6",
+		"eslint-plugin-import": "^2.26.0",
 		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-standard": "^4.0.1",
-		"js-yaml": "^3.14.0",
-		"typescript": "^3.9.3"
+		"eslint-plugin-promise": "^6.0.0",
+		"eslint-plugin-standard": "^4.1.0",
+		"js-yaml": "^4.1.0",
+		"typescript": "^4.7.4"
 	}
 }
