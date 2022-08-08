@@ -34,7 +34,7 @@
 	"author": "wirsich <stephan.wirsich@googlemail.com>",
 	"license": "BSD-2-Clause",
 	"dependencies": {
-		"@actions/core": "^1.9.0",
+		"@actions/core": "^1.9.1",
 		"@actions/glob": "^0.3.0",
 		"@changesets/cli": "^2.24.3",
 		"flat": "^5.0.2",
